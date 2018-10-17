@@ -8,6 +8,8 @@ const productRoutes = require('./api/routes/products'); //import file path api/r
 
 const orderRoute = require('./api/routes/orders'); //import file path api/routes/orders.js
 
+const manageuserRoute = require('./api/routes/manageuser');
+
 const morgan = require('morgan'); // LB get ERROR and Return ERROR Function. npm install --save nodemon
 
 app.use(morgan('dev'));
@@ -36,6 +38,10 @@ app.use((req,res,next)=>{
 app.use('/products' , productRoutes); // URL  Example = http://localhost:3000/products/
 
 app.use('/orders',orderRoute); // URL  Example = http://localhost:3000/orders/
+
+app.use('/manageuser',manageuserRoute);
+
+
 
 
 // npm install nodemon && add text File package.json Tag script  "start": "nodemon server.js"
